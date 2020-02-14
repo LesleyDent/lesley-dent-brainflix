@@ -1,0 +1,45 @@
+@import '../../styles/partials/partials.scss';
+
+.article {
+  @include container;
+
+  &__header {
+    border-bottom: 1px solid $colorGray;
+    margin-bottom: 2.4rem;
+  }
+
+  &__author {
+    margin-right: 1.6rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  &__date {
+    color: $colorGrayDark;
+    font-size: 1.6rem;
+  }
+
+  &__stats {
+    margin-top: 3.2rem;
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+  }
+
+  &__stat {
+    display: inline-flex;
+    margin-right: 2.4rem;
+    font-size: 1.6rem;
+
+    &-text {
+      font-size: 1.6rem;
+    }
+
+    &-icon {
+      margin-right: .8rem;
+    }
+  }
+
+  &__body {
+    margin-bottom: 4rem;
+  }
+}

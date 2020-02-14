@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  color: $colorBlack;
+  font-size: 10px;
+}
+
+body {
+  font-size: 10px;
+}
+
+.container {
+  @include container;
+}

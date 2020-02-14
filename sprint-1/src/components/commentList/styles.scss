@@ -1,0 +1,11 @@
+@import '../../styles/partials/partials.scss';
+
+.comments-list {
+  @include container;
+
+  &__count {
+    margin-bottom: 2.4rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+}
