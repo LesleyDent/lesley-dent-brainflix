@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../components/header';
-import Hero from '../components/hero';
-import Article from '../components/article';
+import Video from '../components/video';
+import VideoDetails from '../components/videoDetails';
 import CommentList from '../components/commentList';
 
 function Main() {
   return (
     <div>
       <Header />
-      <Hero />
-      <Article />
+      <Video />
+      <VideoDetails />
       <CommentList />
     </div>
   );

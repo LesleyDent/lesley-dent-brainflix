@@ -5,7 +5,7 @@ import CommentForm from '../commentForm';
 
 function CommentList() {
   return (
-    <div class="comments-list">
+    <div className="comments-list">
       <p className="comments-list__count">3 Comments</p>
       <CommentForm />
       <Comment />

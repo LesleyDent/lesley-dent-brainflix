@@ -1,6 +1,6 @@
 @import '../../styles/partials/partials.scss';
 
-.article {
+.video-details {
   @include container;
 
   &__header {
@@ -10,7 +10,7 @@
 
   &__author {
     margin-right: 1.6rem;
-    font-weight: 500;
+    font-weight: 900;
     font-size: 1.6rem;
   }
 

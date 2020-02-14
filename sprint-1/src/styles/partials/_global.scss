@@ -1,7 +1,23 @@
+@font-face {
+  font-family: "Avenir";
+  src: url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf');
+}
+
+// @font-face {
+//   font-family: "Avenir";
+//   src: url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf');
+// }
+
+// @font-face {
+//   font-family: "Avenir";
+//   src: url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Light.otf');
+// }
+
 * {
   box-sizing: border-box;
   color: $colorBlack;
   font-size: 10px;
+  font-family: "Avenir";
 }
 
 body {
