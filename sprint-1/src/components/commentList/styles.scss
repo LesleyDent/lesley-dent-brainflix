@@ -2,6 +2,7 @@
 
 .comments-list {
   @include container;
+  margin-bottom: 4rem;
 
   &__count {
     margin-bottom: 2.4rem;

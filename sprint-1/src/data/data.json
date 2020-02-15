@@ -1,0 +1,44 @@
+[
+  {
+    "id": 100000,
+    "title": "type of <string>",
+    "description": "type of <string>",
+    "channel": "type of <string>",
+    "image": "video-list-0.jpg",
+    "views": "type of <string>",
+    "likes": "type of <string>",
+    "duration": "type of <string>",
+    "video": "type of <string>",
+    "timestamp": "type of <number>",
+    "comments": "type of <array>",
+    "featured": true
+  },
+  {
+    "id": 100001,
+    "title": "Become A Travel Pro In One Easy Lesson...",
+    "description": "type of <string>",
+    "channel": "Scotty Cranmer",
+    "image": "video-list-1.jpg",
+    "views": "208475",
+    "likes": "10938",
+    "duration": "2:48",
+    "video": "type of <string>",
+    "timestamp": "type of <number>",
+    "comments": "type of <array>",
+    "featured": false
+  },
+  {
+    "id": 100002,
+    "title": "type of <string>",
+    "description": "type of <string>",
+    "channel": "type of <string>",
+    "image": "video-list-2.jpg",
+    "views": "type of <string>",
+    "likes": "type of <string>",
+    "duration": "type of <string>",
+    "video": "type of <string>",
+    "timestamp": "type of <number>",
+    "comments": "type of <array>",
+    "featured": false
+  }
+]

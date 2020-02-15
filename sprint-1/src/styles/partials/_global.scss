@@ -1,17 +1,12 @@
 @font-face {
   font-family: "Avenir";
-  src: url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf');
+  src: 
+    url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Light.otf'),
+    url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf'),
+    url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf'),
+    url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf'), 
+    url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Heavy.otf'); 
 }
-
-// @font-face {
-//   font-family: "Avenir";
-//   src: url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf');
-// }
-
-// @font-face {
-//   font-family: "Avenir";
-//   src: url('../../assets/Fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Light.otf');
-// }
 
 * {
   box-sizing: border-box;
@@ -27,3 +22,11 @@ body {
 .container {
   @include container;
 }
+
+// make data.json objects inside array, State data, render return this.state.data, pass to List as props, props.data.map return option key ID value with wanted data>.same thing
+
+// eventhandler set state to currentvideo, render return this.eventhandler, 
+
+// data.find return i.name == ehandler name
+
+// class app extends components insert array with objects, then additional mainvid object, filter maps

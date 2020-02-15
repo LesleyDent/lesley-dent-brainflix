@@ -1,0 +1,14 @@
+@import '../../styles/partials/partials.scss';
+
+.videos-list {
+  @include container;
+
+  &__title {
+    color: $colorGrayDark;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 4rem;
+    line-height: 1;
+
+  }
+}
