@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/header';
 import Video from '../components/video';
-import VideoDetails from '../components/videoDetails';
 import CommentList from '../components/commentList';
 import Data from '../data/data.json';
 import VideoList from '../components/videosList';
@@ -13,12 +12,13 @@ class Main extends Component {
   };
 
   render() {
+    const currentVideo = this.state.videosList.filter((video) => video.id === this.state.currentVideoId)[0];
+
     return (
       <div>
         <Header />
-        <Video />
-        <VideoDetails />
-        <CommentList />
+        <Video video={currentVideo} />
+        <CommentList video={currentVideo} />
         <VideoList data={this.state.videosList} current={this.state.currentVideoId} />
       </div>
     );

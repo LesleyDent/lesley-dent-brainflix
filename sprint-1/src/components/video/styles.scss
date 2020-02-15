@@ -1,8 +1,11 @@
 @import '../../styles/partials/partials.scss';
 
 .video {
-  position: relative;
-  margin-bottom: 2rem;
+
+  &__wrapper{
+    position: relative;
+    margin-bottom: 2rem;
+  }
 
   &__source {
     width: 100%;
@@ -52,5 +55,47 @@
     margin: auto auto auto 1.6rem;
     opacity: 0;
   }
+  
+  }
+  &__details {
+    @include container ;
+    margin-bottom: 2.4rem;
+  }
+
+  &__author {
+    margin-right: 1.6rem;
+    font-weight: 900;
+    font-size: 1.6rem;
+  }
+
+  &__date {
+    color: $colorGrayDark;
+    font-size: 1.6rem;
+  }
+
+  &__stats {
+    margin-top: 3.2rem;
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+    border-bottom: 1px solid $colorGray;
+    padding-bottom: 2.4rem;
+  }
+
+  &__stat {
+    display: inline-flex;
+    margin-right: 2.4rem;
+    font-size: 1.6rem;
+
+    &-text {
+      font-size: 1.6rem;
+    }
+
+    &-icon {
+      margin-right: .8rem;
+    }
+  }
+
+  &__body {
+    margin-bottom: 4rem;
   }
 }

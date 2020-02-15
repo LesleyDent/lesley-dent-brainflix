@@ -1,21 +1,18 @@
 import React from 'react';
 import './styles.scss';
+import Timestamp from '../timestamp';
 
 
-function Comment() {
+function Comment(props) {
   return (
     <div className="comments__item">
-      <img src="http://placekitten.com/105/105" className="comments__image" alt="User icon" />
+      <img src={"http://placekitten.com/" + (Math.floor(Math.random() * 50 + 1) + 60) + "/" + (Math.floor(Math.random() * 50 + 1) + 60)} className="comments__image" alt="User icon" />
       <div className="comments__wrap">
         <div className="comments__info">
-          <h4 className="comments__author">Micheal Lyons</h4>
-          <p className="comments__time" data-post-time="1530744338878">2 years ago</p>
+          <h4 className="comments__author">{props.data.name}</h4>
+          <p className="comments__time" data-post-time="1530744338878"><Timestamp timestamp={props.data.timestamp} /></p>
         </div>
-        <p className="comments__text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.</p>
-        {/* <div class="comments__buttons">
-          <button class="comments__deltaco">delete</button>
-          <button class="comments__like">♡ 0</button>
-        </div> */}
+        <p className="comments__text">{props.data.comment}</p>
       </div>
     </div>
   );
