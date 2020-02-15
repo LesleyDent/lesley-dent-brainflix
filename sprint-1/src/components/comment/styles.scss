@@ -21,10 +21,19 @@
     padding-top: 2rem;
     margin-bottom: .8rem;
     width: 100%;
+
+    @include tablet-view {
+      justify-content: left;
+    }
   }
 
   &__author {
     margin: 0;
+    font-weight: 900;
+
+    @include tablet-view {
+      margin-right: 1rem;
+    }
   }
 
   &__wrap {

@@ -11,4 +11,10 @@
     line-height: 1;
 
   }
+
+  @include tablet-view {
+    width: 50%;
+    margin: 0;
+  }
+
 }

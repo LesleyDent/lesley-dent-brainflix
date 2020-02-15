@@ -1,18 +1,28 @@
 @import '../../styles/partials/partials.scss';
 
 .header {
-  padding: 1.6rem 0;
+  padding: 1.6rem 0 .6rem 0;
+  overflow: hidden;
   
   &__container {
     @include container;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include tablet-view {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__inner {
     display: flex;
     flex-wrap: wrap;
+
+    @include tablet-view {
+      flex-wrap: unset;
+    }
   }
 
   &__logo {
@@ -33,12 +43,25 @@
     display: block;
     flex: 1 0 100%;
     margin-bottom: .8rem;
+
+    @include tablet-view {
+      flex: unset;
+      margin-right: 2.4rem;
+    }
   }
 
   &__search-icon {
     position: absolute;
     top: 1.76rem;
     left: 1.6rem;
+  }
+
+  &__button {
+    margin-bottom: .8rem;
+
+    @include tablet-view {
+      margin-right: 2.4rem;
+    }
   }
 
   &__upload-icon {

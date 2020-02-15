@@ -31,19 +31,23 @@ function Video(props) {
           </div>
         </div>
       </div>
-      <div className="video__details">
+      <div className="video__info">
         <h1 className="video__title h2">{props.video.title}</h1>
-        <span className="video__author">By {props.video.channel}</span>
-        <span className="video__date"><Timestamp timestamp={props.video.timestamp} /></span>
-        <div className="video__stats">
-          <span className="video__stat">
-            <img src={ViewsIcon} alt="Views Icon" className="video__stat-icon" />
-            <span className="video__stat-text">{props.video.views}</span>
-          </span>
-          <span className="video__stat">
-            <img src={LikesIcon} alt="Likes Icon" className="video__stat-icon" />
-            <span className="video__stat-text">{props.video.likes}</span>
-          </span>
+        <div className="video__details">
+          <div className="video__detail-wrapper">
+            <span className="video__author">By {props.video.channel}</span>
+            <span className="video__date"><Timestamp timestamp={props.video.timestamp} /></span>
+          </div>
+          <div className="video__detail-wrapper">
+            <span className="video__stat">
+              <img src={ViewsIcon} alt="Views Icon" className="video__stat-icon" />
+              <span className="video__stat-text">{props.video.views}</span>
+            </span>
+            <span className="video__stat">
+              <img src={LikesIcon} alt="Likes Icon" className="video__stat-icon" />
+              <span className="video__stat-text">{props.video.likes}</span>
+            </span>
+          </div>
         </div>
         <div className="video__description">
           <p>{props.video.description}</p>
