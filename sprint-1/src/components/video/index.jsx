@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import Play from '../../assets/Icons/SVG/Icon-play.svg';
-import Scrubber from '../../assets/Icons/SVG/Icon-scrubber-control.svg';
+// import Scrubber from '../../assets/Icons/SVG/Icon-scrubber-control.svg';
 import Fullscreen from '../../assets/Icons/SVG/Icon-fullscreen.svg';
 import Volume from '../../assets/Icons/SVG/Icon-volume.svg';
 

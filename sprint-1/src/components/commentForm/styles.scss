@@ -48,7 +48,8 @@
   &__label {
     display: inline-block;
     color: $colorGrayDark;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: "Avenir-Demi";
     margin-bottom: .4rem;
   }
 
@@ -68,7 +69,7 @@
 
     &::placeholder {
       color: $colorBlack;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 100;
     }
 

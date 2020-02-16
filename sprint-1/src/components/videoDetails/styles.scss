@@ -37,24 +37,18 @@
   }
 
   &__author {
+    font-family: "Avenir-Demi";
     margin-right: 1.6rem;
-    font-weight: 900;
     font-size: 1.6rem;
   }
 
   &__date {
     color: $colorGrayDark;
-    font-size: 1.6rem;
   }
 
   &__stat {
     display: inline-flex;
     margin-right: 2.4rem;
-    font-size: 1.6rem;
-
-    &-text {
-      font-size: 1.6rem;
-    }
 
     &-icon {
       margin-right: .8rem;

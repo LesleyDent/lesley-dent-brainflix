@@ -11,8 +11,8 @@ function VideoListItem(props) {
         alt="Video Thumbnail"
       />
       <div className="video-list-item__info">
-        {/* tried out this ellisis thing for funsies */}
-        <h4><EllipsisText className="video-list-item__title h4" text={props.data.title} length={"40"} /></h4>
+        {/* tried out this ellipsis thing for funsies */}
+        <h4><EllipsisText className="video-list-item__title h4" text={props.data.title} length={40} /></h4>
         <p className="video-list-item__channel">{props.data.channel}</p>
       </div>
     </div>

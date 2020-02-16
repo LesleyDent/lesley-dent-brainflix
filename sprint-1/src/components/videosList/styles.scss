@@ -13,8 +13,7 @@
   &__title {
     color: $colorGrayDark;
     font-size: 1.2rem;
-    font-weight: 900;
-    margin-bottom: 4rem;
+    font-family: "Avenir-Demi";    margin-bottom: 4rem;
     line-height: 1;
     
     @include desktop-view {

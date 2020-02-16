@@ -25,36 +25,34 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-family: "Avenir-Bold";
+  font-family: "Avenir-Demi";
   font-size: 2rem;
   line-height: 2.2rem;
   margin-top: 0;
 
   @media (min-width: $tablet-view) {
     font-size: 2.5rem;
-    font-weight: 900;
     line-height: 3.2rem;
   }
 }
 
 h4, .h4 {
-  font-family: "Avenir-Bold";
+  font-family: "Avenir-Demi";
   font-size: 1.6rem;
   line-height: 1.8rem;
   margin-top: 0;
   margin-bottom: 1rem;
 
   @media (min-width: $tablet-view) {
-    font-size: 1.4rem;
     line-height: 2.2rem;
   }
 }
 
-p, .p {
-  font-size: 1.6rem;
+p, .p, span {
+  font-family: "Avenir";
+  font-size: 1.4rem;
   line-height: 1.57;
   margin-top: 0;
-  font-weight: 300;
 
   @media (min-width: $tablet-view) {
     font-size: 1.4rem;
@@ -72,6 +70,6 @@ button {
   border: none;
   border-radius: 5px;
   color: $colorWhite;
-  font-weight: 900;
+  font-family: "Avenir-Demi";
   font-size: 1.4rem;
 }
