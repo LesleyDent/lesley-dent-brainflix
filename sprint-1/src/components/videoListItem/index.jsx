@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-
+import EllipsisText from "react-ellipsis-text";
 
 function VideoListItem(props) {
   return (
@@ -11,7 +11,8 @@ function VideoListItem(props) {
         alt="Video Thumbnail"
       />
       <div className="video-list-item__info">
-        <h4 className="video-list-item__title">{props.data.title}</h4>
+        {/* tried out this ellisis thing for funsies */}
+        <h4><EllipsisText className="video-list-item__title h4" text={props.data.title} length={"40"} /></h4>
         <p className="video-list-item__channel">{props.data.channel}</p>
       </div>
     </div>

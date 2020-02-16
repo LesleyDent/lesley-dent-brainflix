@@ -84,5 +84,8 @@
       margin: 1.5rem 4rem 0 auto;;
       width: 0;
     }
+    @include desktop-view {
+      margin-right: 3.2rem;
+    }
   }
 }

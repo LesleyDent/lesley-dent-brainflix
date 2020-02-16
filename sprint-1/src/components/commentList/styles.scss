@@ -1,7 +1,6 @@
 @import '../../styles/partials/partials.scss';
 
 .comments-list {
-  @include container;
   margin-bottom: 4rem;
 
   &__count {

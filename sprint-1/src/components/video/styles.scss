@@ -4,12 +4,10 @@
 
   &__wrapper{
     position: relative;
-    margin-bottom: 2rem;
 
     @include tablet-view {
       display: flex;
       justify-content: center;
-      margin-bottom: 3.8rem;
       background: black;
     }
   }
@@ -18,7 +16,11 @@
     width: 100%;
 
     @include tablet-view {
-      max-width: 70rem;
+      height: 40rem;
+    }
+
+    @include desktop-view {
+      height: 54rem;
     }
   }
 
@@ -31,6 +33,9 @@
 
     @include tablet-view {
       max-width: 70rem;
+    }
+    @include desktop-view {
+      max-width: 94rem;
     }
   }
 
@@ -53,6 +58,10 @@
         background-color: black;
         border-radius: 80rem;
         z-index: 0;
+
+        @include tablet-view {
+          width: calc(100% - 9.2rem);
+        }
       }
       &:hover {
         .hero__control-icon {
@@ -63,6 +72,18 @@
     }
   }
 
+  &__duration {
+    display: none;
+
+    @include tablet-view {
+      display: block;
+      position: absolute;
+      top: calc(50% - .6rem);
+      right: 1.3rem;
+      color: $colorWhite;
+    }
+  }
+
   &__control-icon {
     margin: auto 1.6rem auto auto;
   }
@@ -70,64 +91,5 @@
   &--scrubber {
     margin: auto auto auto 1.6rem;
     opacity: 0;
-  }
-  
-  &__info {
-    @include container ;
-    margin-bottom: 2.4rem;
-
-    @include tablet-view {
-      margin-bottom: 5.4rem;
-    }
-  }
-
-  &__details {
-    border-bottom: 1px solid $colorGray;
-    margin-bottom: 2rem;
-
-    @include tablet-view {
-      margin-bottom: 3rem;
-    }
-    
-    @include tablet-view {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  &__detail-wrapper {
-    margin-bottom: 2.4rem;
-  }
-
-  &__author {
-    margin-right: 1.6rem;
-    font-weight: 900;
-    font-size: 1.6rem;
-  }
-
-  &__date {
-    color: $colorGrayDark;
-    font-size: 1.6rem;
-  }
-
-  &__stat {
-    display: inline-flex;
-    margin-right: 2.4rem;
-    font-size: 1.6rem;
-
-    &-text {
-      font-size: 1.6rem;
-    }
-
-    &-icon {
-      margin-right: .8rem;
-    }
-  }
-
-  &__description {
-    @include tablet-view {
-      max-width: 70%;
-    }
   }
 }

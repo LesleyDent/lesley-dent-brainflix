@@ -1,7 +1,14 @@
 @import '../../styles/partials/partials.scss';
 
 .videos-list {
-  @include container;
+  max-width: 36rem;
+  margin: 0;
+  
+  @include desktop-view {
+    @include container;
+    max-width: 36rem;
+    border-left: 1px solid $colorGray;
+  }
 
   &__title {
     color: $colorGrayDark;
@@ -9,12 +16,9 @@
     font-weight: 900;
     margin-bottom: 4rem;
     line-height: 1;
-
+    
+    @include desktop-view {
+      margin-top: 4rem;
+    }  
   }
-
-  @include tablet-view {
-    width: 50%;
-    margin: 0;
-  }
-
 }

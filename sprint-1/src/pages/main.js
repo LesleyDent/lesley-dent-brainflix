@@ -4,6 +4,7 @@ import Video from '../components/video';
 import CommentList from '../components/commentList';
 import Data from '../data/data.json';
 import VideoList from '../components/videosList';
+import VideoDetails from '../components/videoDetails';
 
 class Main extends Component {
   state = {
@@ -18,8 +19,13 @@ class Main extends Component {
       <div>
         <Header />
         <Video video={currentVideo} />
-        <CommentList video={currentVideo} />
-        <VideoList data={this.state.videosList} current={this.state.currentVideoId} />
+        <div className="main-wrapper">
+          <div className="main-wrapper__left">
+            <VideoDetails video={currentVideo} />
+            <CommentList video={currentVideo} />
+          </div>
+          <VideoList data={this.state.videosList} current={this.state.currentVideoId} />
+        </div>
       </div>
     );
   }
