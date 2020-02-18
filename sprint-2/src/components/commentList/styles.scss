@@ -1,0 +1,11 @@
+@import '../../styles/partials/partials.scss';
+
+.comments-list {
+  margin-bottom: 4rem;
+
+  &__count {
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+    font-family: "Avenir-Demi";
+  }
+}
