@@ -9,10 +9,13 @@ const ApiUrl = 'https://project-2-api.herokuapp.com';
 const ApiKey = '?api_key=7b4cdb2a-55b3-4067-bef4-729c915381bb';
 
 class Main extends Component {
-  state = {
-    videosList: [],
-    currentVideoId: false,
-    currentVideo: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      videosList: [],
+      currentVideo: false,
+      currentVideoId: false
+    }
   };
 
   getVideo = (id) => {
@@ -40,6 +43,8 @@ class Main extends Component {
   componentDidMount() {
     this.getVideos();
   }
+
+  // see roys lab for event.
 
   render() {
     return (

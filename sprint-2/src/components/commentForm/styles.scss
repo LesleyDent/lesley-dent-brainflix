@@ -48,6 +48,12 @@
     display: inline-block;
   }
 
+  &__input {
+    @include tablet-view {
+      height: 5rem;
+    }
+  }
+
   &__button {
     width: 100%;
 
