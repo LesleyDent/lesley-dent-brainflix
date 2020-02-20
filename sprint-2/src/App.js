@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
 import 'normalize.css';
-import Main from './pages/main.js'
+import Main from './pages/main.js';
+// import Upload from './pages/upload'
+import Header from './components/header';
 
 function App() {
   return (
-    <Main />
+    <>
+      <Header />
+      <Main />
+      {/* <Upload /> */}
+    </>
+    // use switch here
   );
 }
 

@@ -1,0 +1,9 @@
+@import '../../styles/partials/partials.scss';
+
+.upload-video {
+  @include container;
+
+  &__form-group {
+    margin-bottom: 2rem;
+  }
+}

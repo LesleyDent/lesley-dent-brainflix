@@ -30,7 +30,6 @@
       flex-direction: row;
       align-items: center;
     }
-
   }
 
   &__form-group {
@@ -47,35 +46,6 @@
 
   &__label {
     display: inline-block;
-    color: $colorGrayDark;
-    font-size: 1.2rem;
-    font-family: "Avenir-Demi";
-    margin-bottom: .4rem;
-  }
-
-  &__input {
-    width: 100%;
-    padding: 1.4rem;
-    font-size: 1.5rem;
-    border: 1px solid $colorGray;
-    border-radius: .4rem;
-    outline: none;
-    background-color: $colorGrayLight;
-    resize: none;
-
-    &:focus {
-      border: 2px solid $colorPrimary;
-    }
-
-    &::placeholder {
-      color: $colorBlack;
-      font-size: 1.4rem;
-      font-weight: 100;
-    }
-
-    @include tablet-view {
-      height: 5rem;
-    }
   }
 
   &__button {

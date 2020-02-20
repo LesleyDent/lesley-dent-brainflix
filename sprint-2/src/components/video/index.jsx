@@ -12,8 +12,8 @@ function Video(props) {
       <div className="video__wrapper">
         <video
           className="video__source"
-          src={require(`../../assets/Video/${props.video.video}`)}
-          poster={require(`../../assets/Images/${props.video.image}`)}
+          src={props.video.video}
+          poster={props.video.image}
         />
         <div className="video__controls">
           <div className="video__control-wrapper">

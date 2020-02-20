@@ -1,28 +1,54 @@
 import React, { Component } from 'react';
-import Header from '../components/header';
+import axios from 'axios';
 import Video from '../components/video';
 import CommentList from '../components/commentList';
-import Data from '../data/data.json';
 import VideoList from '../components/videosList';
 import VideoDetails from '../components/videoDetails';
 
+const ApiUrl = 'https://project-2-api.herokuapp.com';
+const ApiKey = '?api_key=7b4cdb2a-55b3-4067-bef4-729c915381bb';
+
 class Main extends Component {
   state = {
-    videosList: Data,
-    currentVideoId: 100000,
+    videosList: [],
+    currentVideoId: false,
+    currentVideo: false
   };
 
-  render() {
-    const currentVideo = this.state.videosList.filter((video) => video.id === this.state.currentVideoId)[0];
+  getVideo = (id) => {
+    axios
+      .get(`${ApiUrl}/videos/${id}${ApiKey}`)
+      .then((video) => {
+        this.setState({
+          currentVideo: video.data,
+          currentVideoId: video.data.id
+        })
+      })
+  }
 
+  getVideos = () => {
+    axios
+      .get(`${ApiUrl}/videos${ApiKey}`)
+      .then((response) => {
+        this.setState({
+          videosList: response.data
+        });
+        this.getVideo(response.data[0].id)
+      })
+  }
+
+  componentDidMount() {
+    this.getVideos();
+  }
+
+  render() {
     return (
       <div>
-        <Header />
-        <Video video={currentVideo} />
+        <Video video={this.state.currentVideo} />
         <div className="main-wrapper">
           <div className="main-wrapper__left">
-            <VideoDetails video={currentVideo} />
-            <CommentList video={currentVideo} />
+            <VideoDetails video={this.state.currentVideo} />
+            <CommentList video={this.state.currentVideo} />
           </div>
           <VideoList data={this.state.videosList} current={this.state.currentVideoId} />
         </div>
@@ -32,3 +58,8 @@ class Main extends Component {
 }
 
 export default Main;
+
+// finish upload page
+// make logo and upload links clickable
+// switch main video
+// router

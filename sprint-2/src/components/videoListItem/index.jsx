@@ -7,7 +7,7 @@ function VideoListItem(props) {
     <div className="video-list-item">
       <img
         className="video-list-item__image"
-        src={require(`../../assets/Images/${props.data.image}`)}
+        src={props.data.image}
         alt="Video Thumbnail"
       />
       <div className="video-list-item__info">
