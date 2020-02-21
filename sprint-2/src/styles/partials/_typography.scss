@@ -60,7 +60,7 @@ p, .p, span {
   }
 }
 
-button {
+.button, button {
   display: flex;
   justify-content: center;
   flex-grow: 1;
@@ -72,7 +72,12 @@ button {
   color: $colorWhite;
   font-family: "Avenir-Demi";
   font-size: 1.4rem;
+  text-decoration: none;
 
+  &--icon {
+  line-height: 1.4;
+  }
+  
   &:hover {
     cursor: pointer;
   }

@@ -4,15 +4,21 @@ import 'normalize.css';
 import Main from './pages/main.js';
 import Upload from './pages/upload'
 import Header from './components/header';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      {/* <Main /> */}
-      <Upload />
-    </>
-    // use switch here
+      <Switch>
+        <Route
+          exact path="/" component={Main} />
+        <Route
+          path="/video/:videoId" component={Main} />
+        <Route
+          path="/upload" component={Upload} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

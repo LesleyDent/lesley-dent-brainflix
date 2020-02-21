@@ -8,11 +8,16 @@ function CommentList(props) {
     return (
       <div className="comments-list">
         <h2 className="comments-list__count">{props.video.comments.length} Comments</h2>
-        <CommentForm />
-        {props.video.comments
-          .map((comment) => {
-            return <Comment key={comment.id} data={comment} />
-          })
+        <CommentForm
+          handleInputChange={props.handleInputChange}
+          submitComment={props.submitComment}
+          comment={props.comment}
+        />
+        {
+          props.video.comments
+            .map((comment) => {
+              return <Comment key={comment.id} data={comment} />
+            })
         }
       </div>
     );
