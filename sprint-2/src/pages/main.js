@@ -14,7 +14,6 @@ class Main extends Component {
     this.state = {
       videosList: [],
       currentVideo: false,
-      inputs: {}
     }
   };
 
@@ -33,31 +32,17 @@ class Main extends Component {
     axios
       .get(`${ApiUrl}/videos${ApiKey}`)
       .then((response) => {
-        console.log('I AM RUNNING')
         this.setState({
           videosList: response.data
         });
         if (!this.state.currentVideo) {
           this.getVideo(response.data[0].id)
-          console.log('test', this.getVideo(response.data[0].id))
         }
       })
   }
 
-  handleInputChange = (inputValue) => {
-    this.setState({
-      inputs: {
-        comment: inputValue
-      }
-    });
-  }
 
-  submitComment = comment => {
-    // post to api
-    console.log('SUBMIT COMMENT!');
-  }
-
-  // first time it loads
+  // inital loads
   componentDidMount() {
     if (this.props.match.params.videoId) {
       this.getVideo(this.props.match.params.videoId);
@@ -66,19 +51,10 @@ class Main extends Component {
     }
   }
 
-  // additional video loads - prevent infinite loop
+  // additional video loads - prevent infinite loop - fix logo link reload
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.videoId == undefined && this.props.match.params.videoId !== prevProps.match.params.videoId) {
-      console.log('BANANAS')
+    if (this.props.match.params.videoId === undefined && this.props.match.params.videoId !== prevProps.match.params.videoId) {
       this.getVideo(this.state.videosList[0].id)
-      // axios
-      //   .get(`${ApiUrl}/videos/1af0jruup5gu${ApiKey}`)
-      //   .then((response) => {
-      //     console.log('I AM RUNNING')
-      //     this.setState({
-      //       currentVideo: response.data
-      //     });
-      //   });
     } else if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
       this.getVideo(this.props.match.params.videoId);
       window.scrollTo({
@@ -98,9 +74,8 @@ class Main extends Component {
             <VideoDetails video={this.state.currentVideo} />
             <CommentList
               video={this.state.currentVideo}
-              handleInputChange={this.handleInputChange}
-              submitComment={this.submitComment}
-              comment={this.state.comment}
+              apiUrl={ApiUrl}
+              apiKey={ApiKey}
             />
           </div>
           <VideoList data={this.state.videosList} current={this.props.match.params.videoId || this.state.currentVideo.id} />
@@ -112,7 +87,6 @@ class Main extends Component {
 
 export default Main;
 
-// fix logo link on sidevid pages
 // comments post
 // capitalize components folders
 // fix button sizes on upload page

@@ -9,9 +9,9 @@ function CommentList(props) {
       <div className="comments-list">
         <h2 className="comments-list__count">{props.video.comments.length} Comments</h2>
         <CommentForm
-          handleInputChange={props.handleInputChange}
-          submitComment={props.submitComment}
-          comment={props.comment}
+          id={props.video.id}
+          apiUrl={props.apiUrl}
+          apiKey={props.apiKey}
         />
         {
           props.video.comments
