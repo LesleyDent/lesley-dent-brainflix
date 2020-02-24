@@ -6,7 +6,7 @@ import VideoList from '../components/videosList';
 import VideoDetails from '../components/videoDetails';
 
 const ApiUrl = 'https://project-2-api.herokuapp.com';
-const ApiKey = '?api_key=7b4cdb2a-55b3-4067-bef4-729c915381bb';
+const ApiKey = '?api_key=543f8276-7a36-4d7f-b00f-18d5278bd84d';
 
 class Main extends Component {
   constructor(props) {
@@ -14,15 +14,49 @@ class Main extends Component {
     this.state = {
       videosList: [],
       currentVideo: false,
+      currentVideoComments: [],
+      inputs: '',
+      comment: {}
     }
   };
+
+  handleInputChange = (inputValue) => {
+    this.setState({
+      inputs: inputValue,
+      comment: {
+        name: "Rick Astley",
+        comment: inputValue
+      }
+    });
+  }
+
+  handleChange = event => {
+    event.preventDefault();
+    this.handleInputChange(
+      event.target.value
+    );
+  }
+
+  submitComment = (event) => {
+    event.preventDefault();
+    axios.post(`${ApiUrl}/videos/${this.state.currentVideo.id}/comments${ApiKey}`, this.state.comment)
+      .then((response) => {
+        let tempComments = this.state.currentVideoComments;
+        tempComments.unshift(response.data);
+        this.setState({
+          currentVideoComments: tempComments,
+          inputs: ''
+        })
+      })
+  }
 
   getVideo = (id) => {
     axios
       .get(`${ApiUrl}/videos/${id}${ApiKey}`)
       .then((video) => {
         this.setState({
-          currentVideo: video.data
+          currentVideo: video.data,
+          currentVideoComments: video.data.comments.reverse()
         })
         this.getVideos();
       })
@@ -42,16 +76,10 @@ class Main extends Component {
   }
 
 
-  // inital loads
   componentDidMount() {
-    if (this.props.match.params.videoId) {
-      this.getVideo(this.props.match.params.videoId);
-    } else {
-      this.getVideos();
-    }
+    this.props.match.params.videoId ? this.getVideo(this.props.match.params.videoId) : this.getVideos();
   }
 
-  // additional video loads - prevent infinite loop - fix logo link reload
   componentDidUpdate(prevProps) {
     if (this.props.match.params.videoId === undefined && this.props.match.params.videoId !== prevProps.match.params.videoId) {
       this.getVideo(this.state.videosList[0].id)
@@ -73,6 +101,11 @@ class Main extends Component {
           <div className="main-wrapper__left">
             <VideoDetails video={this.state.currentVideo} />
             <CommentList
+              handleInputChange={(event) => { this.handleInputChange(event) }}
+              handleChange={(event) => { this.handleChange(event) }}
+              submitComment={(event) => { this.submitComment(event) }}
+              comments={this.state.currentVideoComments}
+              inputValue={this.state.inputs}
               video={this.state.currentVideo}
               apiUrl={ApiUrl}
               apiKey={ApiKey}
@@ -86,24 +119,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-// comments post
-// capitalize components folders
-// fix button sizes on upload page
-
-
-//state= main:{} List:[] componentmount - axios.all - axios get - axios get - then responseArray - this.setState main:resArr[1].data, List:resArr[0].data
-
-// render return MainPage main={this.state.main}
-// ListPage list={this.state.list]}
-
-
-// destructuring ::: const {name} = props.main ... {name} instead of {props.name}
-
-// comments: object.values() if!this.state.main.comments=false
-
-// Route path="/" 
-
-// link fix - match params is undefined.
-
-// post .. stop re-render.

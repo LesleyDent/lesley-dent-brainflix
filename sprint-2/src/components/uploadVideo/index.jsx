@@ -25,7 +25,7 @@ function UploadVideo() {
         </div>
         <div className="upload-video__button-wrapper">
           <button type="submit" className="button upload-video__button">PUBLISH</button>
-          <button type="submit" className="button upload-video__button upload-video__button--different">CANCEL</button>
+          <button type="submit" className="upload-video__button upload-video__button--different">CANCEL</button>
         </div>
       </form>
     </div>
@@ -33,5 +33,3 @@ function UploadVideo() {
 }
 
 export default UploadVideo
-
-// recipeForm and recipeSearch

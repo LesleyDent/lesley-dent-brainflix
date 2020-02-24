@@ -4,10 +4,6 @@ import ViewsIcon from '../../assets/Icons/SVG/Icon-views.svg';
 import LikesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
 import Timestamp from '../timestamp';
 
-// const apiUrl = 'https://project-2-api.herokuapp.com';
-// const apiKey = '?api_key=acd287e0-160c-4db4-885a-040070e9c093';
-
-
 function VideoDetails(props) {
   return (
     <div className="video-details__info">

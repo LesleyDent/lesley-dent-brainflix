@@ -31,5 +31,3 @@ function Header() {
 }
 
 export default Header;
-
-// would it make sense to make this a class function and set the current video to [] when you click the link?

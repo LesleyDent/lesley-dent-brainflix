@@ -68,6 +68,7 @@
   &__button {
     margin-bottom: 2rem;
     width: 100%;
+    min-width: 16rem;
 
     @include tablet-view {
       padding-right: 5rem;
@@ -75,7 +76,7 @@
       margin-right: 0;
     }
 
-    &--different {
+    &--different, button {
       color: $colorPrimary;
       background-color: $colorWhite;
     }
