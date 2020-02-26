@@ -1,0 +1,84 @@
+@import '../../styles/partials/partials.scss';
+
+.upload-video {
+  @include container;
+  border-top: 1px solid $colorGray;
+  padding-top: 2rem;
+
+  @include tablet-view {
+    padding-top: 4rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-group {
+    margin-bottom: 2rem;
+
+    &--flex {
+      @include tablet-view {
+      width: 50%;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include tablet-view {
+      border-bottom: 1px solid $colorGray;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+    }
+
+    @include desktop-view {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @include tablet-view {
+      margin-bottom: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid $colorGray;
+    }  
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+  }
+
+  &__details {
+    @include desktop-view {
+      width: 100%;
+      margin-left: 2rem;  
+    }
+  }
+
+  &__button-wrapper {
+    @include tablet-view {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-left: auto;
+    }
+  }
+  &__button {
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 16rem;
+
+    @include tablet-view {
+      padding-right: 5rem;
+      padding-left: 5rem;
+      margin-right: 0;
+    }
+
+    &--different, button {
+      color: $colorPrimary;
+      background-color: $colorWhite;
+    }
+  }
+}

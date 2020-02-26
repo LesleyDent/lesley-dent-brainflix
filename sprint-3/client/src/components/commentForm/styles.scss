@@ -1,0 +1,68 @@
+@import '../../styles/partials/partials.scss';
+
+.comments {
+  &__form {
+    display: flex;
+    border-bottom: 1px solid $colorGray;
+    padding-bottom: 2.4rem;
+
+    @include tablet-view {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    margin: 2rem 1rem 0 0;
+    flex-shrink: 0;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: .8rem;
+
+    @include tablet-view {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__form-group {
+    margin-top: .3rem;
+    margin-bottom: 2rem;
+    text-align: left;
+
+    @include tablet-view {
+      flex-grow: 1;
+      margin-right: 1.6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+  }
+
+  &__input {
+    @include tablet-view {
+      height: 5rem;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include tablet-view {
+      margin: 1.5rem 4rem 0 auto;;
+      width: 0;
+    }
+    @include desktop-view {
+      margin-right: 3.2rem;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import '../../styles/partials/partials.scss';
+
+.video-details {  
+  &__info {
+    margin-bottom: 2.4rem;
+
+    @include tablet-view {
+      margin-bottom: 5.4rem;
+    }
+  }
+
+  &__details {
+    border-bottom: 1px solid $colorGray;
+    margin-bottom: 2rem;
+
+    @include tablet-view {
+      margin-bottom: 3rem;
+    }
+    
+    @include tablet-view {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__detail-wrapper {
+    margin-bottom: 2.4rem;
+  }
+
+  &__title {
+    margin-top: 2rem;
+
+    @include tablet-view {
+      margin-top: 3.8rem;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__author {
+    font-family: "Avenir-Demi";
+    margin-right: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  &__date {
+    color: $colorGrayDark;
+  }
+
+  &__stat {
+    display: inline-flex;
+    margin-right: 2.4rem;
+
+    &-icon {
+      margin-right: .8rem;
+    }
+  }
+
+  &__description {
+    @include tablet-view {
+      max-width: 70%;
+    }
+  }
+}

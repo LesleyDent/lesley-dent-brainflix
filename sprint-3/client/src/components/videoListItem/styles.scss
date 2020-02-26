@@ -1,0 +1,28 @@
+@import "../../styles/partials/partials.scss";
+
+.video-list-item {
+  display: flex;
+  margin-bottom: 2.4rem;
+  text-decoration: none;
+
+  &__image {
+    height: 7rem;
+    width: 12rem;
+    margin-right: 1.6rem;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin-bottom: .5rem;
+    .more {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__channel {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+}

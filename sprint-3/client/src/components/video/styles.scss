@@ -1,0 +1,96 @@
+@import '../../styles/partials/partials.scss';
+
+.video {
+
+  &__wrapper{
+    position: relative;
+
+    @include tablet-view {
+      display: flex;
+      justify-content: center;
+      background: black;
+    }
+  }
+
+  &__source {
+    width: 100%;
+
+    @include tablet-view {
+      height: 40rem;
+    }
+
+    @include desktop-view {
+      height: 54rem;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: .8rem;
+    padding: 0 1.6rem;
+
+    @include tablet-view {
+      max-width: 70rem;
+    }
+    @include desktop-view {
+      max-width: 94rem;
+    }
+  }
+
+  &__control-wrapper {
+    display: flex;
+    margin: .25rem;
+    padding: .8rem 0 .8rem 1.6rem;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+
+    &--scrubber {
+      flex: 1 0 auto;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 2px);
+        width: calc(100% - 3.2rem);
+        height: 4px;
+        background-color: black;
+        border-radius: 80rem;
+        z-index: 0;
+
+        @include tablet-view {
+          width: calc(100% - 9.2rem);
+        }
+      }
+      &:hover {
+        .hero__control-icon {
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  &__duration {
+    display: none;
+
+    @include tablet-view {
+      display: block;
+      position: absolute;
+      top: calc(50% - 1.1rem);
+      right: 1.3rem;
+      color: $colorWhite;
+      font-size: 1rem;
+    }
+  }
+
+  &__control-icon {
+    margin: auto 1.6rem auto auto;
+  }
+
+  &--scrubber {
+    margin: auto auto auto 1.6rem;
+    opacity: 0;
+  }
+}
