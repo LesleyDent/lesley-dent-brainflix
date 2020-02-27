@@ -5,8 +5,8 @@ import CommentList from '../components/commentList';
 import VideoList from '../components/videosList';
 import VideoDetails from '../components/videoDetails';
 
-const ApiUrl = 'https://project-2-api.herokuapp.com';
-const ApiKey = '?api_key=543f8276-7a36-4d7f-b00f-18d5278bd84d';
+const ApiUrl = 'http://localhost:8080';
+// const ApiKey = '?api_key=543f8276-7a36-4d7f-b00f-18d5278bd84d';
 
 class Main extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Main extends Component {
 
   submitComment = (event) => {
     event.preventDefault();
-    axios.post(`${ApiUrl}/videos/${this.state.currentVideo.id}/comments${ApiKey}`, this.state.comment)
+    axios.post(`${ApiUrl}/videos/${this.state.currentVideo.id}/comments`, this.state.comment)
       .then((response) => {
         let tempComments = this.state.currentVideoComments;
         tempComments.unshift(response.data);
@@ -52,7 +52,7 @@ class Main extends Component {
 
   getVideo = (id) => {
     axios
-      .get(`${ApiUrl}/videos/${id}${ApiKey}`)
+      .get(`${ApiUrl}/videos/${id}`)
       .then((video) => {
         this.setState({
           currentVideo: video.data,
@@ -64,7 +64,7 @@ class Main extends Component {
 
   getVideos = () => {
     axios
-      .get(`${ApiUrl}/videos${ApiKey}`)
+      .get(`${ApiUrl}/videos`)
       .then((response) => {
         this.setState({
           videosList: response.data
@@ -108,7 +108,7 @@ class Main extends Component {
               inputValue={this.state.inputs}
               video={this.state.currentVideo}
               apiUrl={ApiUrl}
-              apiKey={ApiKey}
+            // apiKey={ApiKey}
             />
           </div>
           <VideoList data={this.state.videosList} current={this.props.match.params.videoId || this.state.currentVideo.id} />
