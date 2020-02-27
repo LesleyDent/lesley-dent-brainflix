@@ -50,13 +50,15 @@ class Main extends Component {
       });
   };
 
+
+
   getVideo = (id) => {
     axios
       .get(`${ApiUrl}/videos/${id}`)
       .then((video) => {
         this.setState({
           currentVideo: video.data,
-          currentVideoComments: video.data.comments.reverse(),
+          currentVideoComments: video.data.comments,
         });
         this.getVideos();
       });

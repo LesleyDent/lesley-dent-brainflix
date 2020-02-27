@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   let reqVid = videoData.some(video => video.id === parseInt(req.params.id));
   if (reqVid) {
-    res.json(videoData.filter(video => video.id === parseInt(req.params.id)));
+    res.json(videoData.find(video => video.id === parseInt(req.params.id)));
   } else res.status(400).send('No video ID');
 });
 

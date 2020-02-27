@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 const localPort = 8080;
-const commentRoutes = require('./routes/comments');
+// const commentRoutes = require('./routes/comments');
 const videoRoutes = require('./routes/videos');
 
 const app = express();

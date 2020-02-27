@@ -9,7 +9,7 @@ export default class CommentList extends Component {
   }
 
   render() {
-    if (this.props.video) {
+    if (this.props.video.comments) {
       return (
         <div className="comments-list">
           <h2 className="comments-list__count">{this.props.video.comments.length} Comments</h2>
@@ -20,7 +20,7 @@ export default class CommentList extends Component {
             value={this.props.inputValue}
             id={this.props.video.id}
             apiUrl={this.props.apiUrl}
-            apiKey={this.props.apiKey}
+          // apiKey={this.props.apiKey}
           />
           {
             this.props.comments
