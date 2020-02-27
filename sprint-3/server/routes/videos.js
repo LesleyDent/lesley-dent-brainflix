@@ -1,5 +1,5 @@
 const express = require('express');
-const uuid = require('uuid/v1');
+const uuid = require('uuid/v4');
 const router = express.Router();
 const fs = require('fs');
 
@@ -10,20 +10,25 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  console.log(req.params.id)
-  let video = videoData.some(videoData => videoData.id === req.params.id);
-  console.log(video)
-  if (video) {
-    send.json(videoData.filter(videoData => videoData.id === req.params.id));
+  let reqVid = videoData.some(video => video.id === parseInt(req.params.id));
+  if (reqVid) {
+    res.json(videoData.filter(video => video.id === parseInt(req.params.id)));
   } else res.status(400).send('No video ID');
 });
 
-router.post('/', (req, res) => {
-  // console.log(req.body);
+router.post('/:upload', (req, res) => {
   const { body } = req;
   const newVideo = {
-    "id": uuid,
-    "video": { ...body }
+    ...body,
+    id: uuid,
+    channel: "The Best One",
+    image: "https://i.imgur.com/l2Xfgpl.jpg",
+    views: "2,001,0",
+    likes: "110,90",
+    duration: "3:22",
+    video: "BrainStation Sample Video.mp4",
+    timestamp: Date.now(),
+    comments: []
   }
   videoData.push(newVideo)
   // fs.writeFileSync('../data/data.json', JSON.stringify(videoData, null, 2))

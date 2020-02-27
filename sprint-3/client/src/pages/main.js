@@ -17,7 +17,7 @@ class Main extends Component {
       currentVideoComments: [],
       inputs: '',
       comment: {}
-    }
+    };
   };
 
   handleInputChange = (inputValue) => {
@@ -28,14 +28,14 @@ class Main extends Component {
         comment: inputValue
       }
     });
-  }
+  };
 
   handleChange = event => {
     event.preventDefault();
     this.handleInputChange(
       event.target.value
     );
-  }
+  };
 
   submitComment = (event) => {
     event.preventDefault();
@@ -46,9 +46,9 @@ class Main extends Component {
         this.setState({
           currentVideoComments: tempComments,
           inputs: ''
-        })
-      })
-  }
+        });
+      });
+  };
 
   getVideo = (id) => {
     axios
@@ -56,11 +56,11 @@ class Main extends Component {
       .then((video) => {
         this.setState({
           currentVideo: video.data,
-          currentVideoComments: video.data.comments.reverse()
-        })
+          currentVideoComments: video.data.comments.reverse(),
+        });
         this.getVideos();
-      })
-  }
+      });
+  };
 
   getVideos = () => {
     axios
@@ -71,14 +71,14 @@ class Main extends Component {
         });
         if (!this.state.currentVideo) {
           this.getVideo(response.data[0].id)
-        }
-      })
-  }
+        };
+      });
+  };
 
 
   componentDidMount() {
     this.props.match.params.videoId ? this.getVideo(this.props.match.params.videoId) : this.getVideos();
-  }
+  };
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.videoId === undefined && this.props.match.params.videoId !== prevProps.match.params.videoId) {
@@ -89,9 +89,9 @@ class Main extends Component {
         top: 0,
         left: 0,
         behavior: 'smooth'
-      })
-    }
-  }
+      });
+    };
+  };
 
   render() {
     return (
@@ -115,7 +115,7 @@ class Main extends Component {
         </div>
       </>
     );
-  }
+  };
 }
 
 export default Main;

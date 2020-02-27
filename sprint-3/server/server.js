@@ -11,7 +11,12 @@ const app = express();
 const fs = require('fs');
 
 app.use(express.static('public'));
+
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 app.use(express.json());
 app.use(cors());
 
@@ -19,7 +24,6 @@ app.get('/', (req, res) => {
   res.send('Hey there');
 });
 
-// app.use('/comments', commentRoutes);
 app.use('/videos', videoRoutes);
 
 app.listen(process.env.PORT || localPort, () => {
