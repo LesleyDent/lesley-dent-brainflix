@@ -1,5 +1,4 @@
 const express = require('express');
-const uuid = require('uuid/v4');
 const router = express.Router();
 const fs = require('fs');
 
@@ -16,11 +15,11 @@ router.get('/:id', (req, res) => {
   } else res.status(400).send('No video ID');
 });
 
-router.post('/:upload', (req, res) => {
+router.post('/', (req, res) => {
   const { body } = req;
   const newVideo = {
     ...body,
-    id: uuid,
+    id: Date.now(),
     channel: "The Best One",
     image: "https://i.imgur.com/l2Xfgpl.jpg",
     views: "2,001,0",
@@ -31,7 +30,7 @@ router.post('/:upload', (req, res) => {
     comments: []
   }
   videoData.push(newVideo)
-  // fs.writeFileSync('../data/data.json', JSON.stringify(videoData, null, 2))
+  fs.writeFile('../data/data.json', JSON.stringify(videoData, null, 2))
   res.status(201).json(newVideo)
 })
 

@@ -17,7 +17,7 @@ function CommentForm(props) {
             maxLength="400"
             required
             name="commentText"
-            value={props.value}
+            defaultValue={props.value}
             onInput={(event) => { props.handleChange(event) }}
           />
         </div>

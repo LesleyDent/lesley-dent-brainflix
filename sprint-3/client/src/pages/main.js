@@ -16,7 +16,8 @@ class Main extends Component {
       currentVideo: false,
       currentVideoComments: [],
       inputs: '',
-      comment: {}
+      comment: {},
+      uploadForm: {}
     };
   };
 
@@ -49,8 +50,6 @@ class Main extends Component {
         });
       });
   };
-
-
 
   getVideo = (id) => {
     axios
