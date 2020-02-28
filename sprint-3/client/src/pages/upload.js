@@ -1,10 +1,9 @@
+import './upload-styles.scss';
 import React, { Component } from 'react';
 import UploadVideoThumb from '../assets/Images/Upload-video-preview.jpg';
 import axios from 'axios';
 
 const ApiUrl = 'http://localhost:8080';
-
-// import './styles.scss';
 
 export default class Upload extends Component {
   constructor(props) {
