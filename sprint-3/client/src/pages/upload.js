@@ -17,8 +17,11 @@ export default class Upload extends Component {
   submitVideo = (event) => {
     event.preventDefault();
     axios.post(`${ApiUrl}/videos`, { title: this.state.title, description: this.state.description })
-      .then((response) => {
-        console.log(response)
+      .then(() => {
+        this.setState({
+          title: "",
+          description: ""
+        });
       });
   }
 
@@ -36,7 +39,7 @@ export default class Upload extends Component {
           className="upload-video__form"
           action="" method="POST"
           autoComplete="on"
-          onSubmit={this.submitVideo}
+          onSubmit={(event) => { this.submitVideo(event) }}
         >
           <div className="upload-video__wrapper">
             <div className="upload-video__form-group--flex">
@@ -77,7 +80,6 @@ export default class Upload extends Component {
             <button
               type="submit"
               className="upload-video__button upload-video__button--different"
-
             >
               CANCEL
           </button>

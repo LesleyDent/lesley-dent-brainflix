@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './styles.scss';
 import UserIcon from '../../assets/Images/Mohan-muruge.jpg';
 
 function CommentForm(props) {
   return (
     <form
-      className="comments__form" action="" method="POST" autoComplete="on">
+      className="comments__form"
+      action="" method="POST"
+      autoComplete="on"
+      onSubmit={(event) => { props.submitComment(event) }}
+    >
       <img className="comments__image" src={UserIcon} alt="Author avatar" />
       <div className="comments__details">
         <div className="comments__form-group">
@@ -24,10 +28,9 @@ function CommentForm(props) {
         <button
           type="submit"
           className="button comments__button"
-          onClick={(event) => { props.submitComment(event) }}
         >
           COMMENT
-          </button>
+        </button>
       </div>
     </form>
   );

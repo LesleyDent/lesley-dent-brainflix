@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const videoData = require('../data/data.json')
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
   res.json(videoData);
 });
 
@@ -21,35 +21,36 @@ router.post('/', (req, res) => {
     ...body,
     id: Date.now(),
     channel: "The Best One",
-    image: "https://i.imgur.com/l2Xfgpl.jpg",
+    image: "/static/media/Upload-video-preview.c814c81c.jpg",
     views: "2,001,0",
     likes: "110,90",
     duration: "3:22",
-    video: "BrainStation Sample Video.mp4",
+    video: "",
     timestamp: Date.now(),
     comments: []
   }
   videoData.push(newVideo)
-  fs.writeFile('../data/data.json', JSON.stringify(videoData, null, 2))
   res.status(201).json(newVideo)
 })
 
+router.post('/:id/comments', (req, res) => {
+  let currentVidExists = videoData.some(video => video.id === parseInt(req.params.id));
+  if (currentVidExists) {
+    let currentVid = videoData.find((video) => video.id === parseInt(req.params.id));
+    let currentVidIndex = videoData.indexOf(currentVid);
+
+    const newComment = {
+      ...req.body,
+      id: Date.now(),
+      likes: 0,
+      timestamp: Date.now(),
+    }
+
+    currentVid.comments.push(newComment);
+    videoData.splice(currentVidIndex, 1, currentVid);
+
+    res.status(201).json(newComment)
+  } else res.status(400).send('No video ID');
+})
 
 module.exports = router;
-
-// const videoRoutes = (app, fs) => {
-
-//   const dataPath = './data/data.json'
-
-//   app.get('/videos', (req, res) => {
-//     fs.readFile(dataPath, (err, data) => {
-//       if (err) {
-//         throw err;
-//       }
-
-//       res.send(JSON.parse(data));
-//     });
-//   });
-// };
-
-// module.exports = videoRoutes;

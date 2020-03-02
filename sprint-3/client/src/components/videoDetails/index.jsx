@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.scss';
 import ViewsIcon from '../../assets/Icons/SVG/Icon-views.svg';
 import LikesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
-import Timestamp from '../timestamp';
+import Timestamp from '../Timestamp';
 
 function VideoDetails(props) {
   return (

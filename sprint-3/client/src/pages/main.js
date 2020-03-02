@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Video from '../components/video';
-import CommentList from '../components/commentList';
-import VideoList from '../components/videosList';
-import VideoDetails from '../components/videoDetails';
+import Video from '../components/Video';
+import CommentList from '../components/CommentList';
+import VideoList from '../components/VideosList';
+import VideoDetails from '../components/VideoDetails';
 
 const ApiUrl = 'http://localhost:8080';
-// const ApiKey = '?api_key=543f8276-7a36-4d7f-b00f-18d5278bd84d';
 
 class Main extends Component {
   constructor(props) {
@@ -102,17 +101,15 @@ class Main extends Component {
           <div className="main-wrapper__left">
             <VideoDetails video={this.state.currentVideo} />
             <CommentList
-              handleInputChange={(event) => { this.handleInputChange(event) }}
-              handleChange={(event) => { this.handleChange(event) }}
-              submitComment={(event) => { this.submitComment(event) }}
+              handleChange={this.handleChange}
+              submitComment={this.submitComment}
               comments={this.state.currentVideoComments}
               inputValue={this.state.inputs}
               video={this.state.currentVideo}
               apiUrl={ApiUrl}
-            // apiKey={ApiKey}
             />
           </div>
-          <VideoList data={this.state.videosList} current={this.props.match.params.videoId || this.state.currentVideo.id} />
+          <VideoList data={this.state.videosList} current={parseInt(this.props.match.params.videoId) || this.state.currentVideo.id} />
         </div>
       </>
     );

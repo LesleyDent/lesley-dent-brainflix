@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import Timestamp from '../timestamp';
+import Timestamp from '../Timestamp';
 
 
 function Comment(props) {
