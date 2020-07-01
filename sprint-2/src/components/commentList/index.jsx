@@ -4,9 +4,6 @@ import Comment from '../comment';
 import CommentForm from '../commentForm';
 
 export default class CommentList extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     if (this.props.video) {

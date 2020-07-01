@@ -10,9 +10,7 @@ export default class CommentList extends Component {
         <div className="comments-list">
           <h2 className="comments-list__count">{this.props.video.comments.length} Comments</h2>
           <CommentForm
-            handleChange={this.props.handleChange}
             submitComment={this.props.submitComment}
-            value={this.props.inputValue}
             id={this.props.video.id}
             apiUrl={this.props.apiUrl}
           />

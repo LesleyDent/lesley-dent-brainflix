@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'normalize.css';
-import Main from './pages/main.js';
-import Upload from './pages/upload'
+import Main from './pages/main';
+import Upload from './pages/upload';
 import Header from './components/Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 

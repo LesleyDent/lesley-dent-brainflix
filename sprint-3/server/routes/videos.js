@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
+// const fs = require('fs');
 
 const videoData = require('../data/data.json')
 
@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
   const newVideo = {
     ...body,
     id: Date.now(),
-    channel: "The Best One",
+    channel: "The Best Channel",
     image: "/static/media/Upload-video-preview.c814c81c.jpg",
     views: "2,001,0",
     likes: "110,90",

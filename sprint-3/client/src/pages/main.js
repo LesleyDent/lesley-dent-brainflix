@@ -14,40 +14,24 @@ class Main extends Component {
       videosList: [],
       currentVideo: false,
       currentVideoComments: [],
-      inputs: '',
-      comment: {},
       uploadForm: {}
     };
   };
 
-  handleInputChange = (inputValue) => {
-    this.setState({
-      inputs: inputValue,
-      comment: {
-        name: "Rick Astley",
-        comment: inputValue
-      }
-    });
-  };
-
-  handleChange = event => {
-    event.preventDefault();
-    this.handleInputChange(
-      event.target.value
-    );
-  };
-
   submitComment = (event) => {
     event.preventDefault();
-    axios.post(`${ApiUrl}/videos/${this.state.currentVideo.id}/comments`, this.state.comment)
+    axios.post(`${ApiUrl}/videos/${this.state.currentVideo.id}/comments`, {
+      name: 'Your Mom',
+      comment: event.target.commentText.value
+    })
       .then((response) => {
         let tempComments = this.state.currentVideoComments;
         tempComments.unshift(response.data);
         this.setState({
           currentVideoComments: tempComments,
-          inputs: ''
         });
       });
+    event.target.reset()
   };
 
   getVideo = (id) => {
@@ -56,7 +40,7 @@ class Main extends Component {
       .then((video) => {
         this.setState({
           currentVideo: video.data,
-          currentVideoComments: video.data.comments,
+          currentVideoComments: video.data.comments.reverse(),
         });
         this.getVideos();
       });
@@ -101,10 +85,8 @@ class Main extends Component {
           <div className="main-wrapper__left">
             <VideoDetails video={this.state.currentVideo} />
             <CommentList
-              handleChange={this.handleChange}
               submitComment={this.submitComment}
               comments={this.state.currentVideoComments}
-              inputValue={this.state.inputs}
               video={this.state.currentVideo}
               apiUrl={ApiUrl}
             />

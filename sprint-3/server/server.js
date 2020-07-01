@@ -7,7 +7,7 @@ const localPort = 8080;
 const videoRoutes = require('./routes/videos');
 
 const app = express();
-const fs = require('fs');
+// const fs = require('fs');
 
 app.use(express.static('public'));
 
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.send('Hey there');
 });
 

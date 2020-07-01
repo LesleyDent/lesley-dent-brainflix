@@ -24,7 +24,7 @@ class Main extends Component {
     this.setState({
       inputs: inputValue,
       comment: {
-        name: "Rick Astley",
+        name: "Your mom",
         comment: inputValue
       }
     });
@@ -51,6 +51,7 @@ class Main extends Component {
   }
 
   getVideo = (id) => {
+    console.log(id)
     axios
       .get(`${ApiUrl}/videos/${id}${ApiKey}`)
       .then((video) => {

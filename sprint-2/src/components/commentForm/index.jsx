@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './styles.scss';
 import UserIcon from '../../assets/Images/Mohan-muruge.jpg';
 
@@ -18,7 +18,7 @@ function CommentForm(props) {
             required
             name="commentText"
             value={props.value}
-            onInput={(event) => { props.handleChange(event) }}
+            onChange={(event) => { props.handleChange(event) }}
           />
         </div>
         <button
