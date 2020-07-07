@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-// const fs = require('fs');
 
 const videoData = require('../data/data.json')
 
@@ -9,6 +8,7 @@ router.get('/', (_, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  console.log('req', req, 'res', res)
   let reqVid = videoData.some(video => video.id === parseInt(req.params.id));
   if (reqVid) {
     res.json(videoData.find(video => video.id === parseInt(req.params.id)));
@@ -20,8 +20,10 @@ router.post('/', (req, res) => {
   const newVideo = {
     ...body,
     id: Date.now(),
+    title: req.body.title,
     channel: "The Best Channel",
     image: "/static/media/Upload-video-preview.c814c81c.jpg",
+    description: req.body.description,
     views: "2,001,0",
     likes: "110,90",
     duration: "3:22",
